@@ -4,4 +4,4 @@ This is the front end of a simple invoice system. It was an accessment for a job
 
 To install dependencies: `$ bower install`
 
-Unfortunatelly I can't put the node server here so there is now way to explore it using the browser, I decided to keep it here for code analysis.
+Unfortunatelly I can't put the node server here so there is now way to explore it using the browser, I decided to keep it here for code analysis. Also the CSS or UI was not in the scope of this accessment.
