@@ -1,0 +1,38 @@
+<div id="products">
+  <h1>Products</h1>
+
+  <div class="description-header">
+    <span>
+      <ng-pluralize count="quantity" when="{
+        '0': 'There are no products yet, go ahead and add the first one.',
+        '1': 'There are 1 product',
+        'other': 'There are {{quantity}} invoices.'
+      }">
+      </ng-pluralize>
+    </span>
+
+    Click on the field to edit.
+  </p>
+
+  <ul class="list-group products">
+    <li class="list-group-item product header" ng-if="products.length">
+      <span class="name"><b>Product name</b></span>
+      <span class="price pull-right"><b>Price</b></span>
+      <div class="clear"></div>
+    </li>
+    <li class="list-group-item product" ng-repeat="product in products" ng-controller="ProductController">
+
+      <span class="name">
+          <span ng-hide="editing" ng-click="edit()">{{product.name}}</span>
+          <input ng-show="editing" ng-model='product.name' ng-blur="save()">
+
+      </span>
+      <span class="total pull-right">
+        <span ng-hide="editing" ng-click="edit()">{{product.price}}</span>
+        <input ng-show="editing" ng-model='product.price' ng-blur="save()">
+      </span>
+      <div class="clear"></div>
+    </li>
+  </ul>
+</div>
+

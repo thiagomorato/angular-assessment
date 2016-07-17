@@ -1,0 +1,61 @@
+<div id="new-invoice">
+  <ul class="invoice-items list-group" ng-hide="!invoice">
+
+    <li class="invoice-item list-group-item header" ng-if="invoiceItems.length">
+      <span class="name"><b>Product Name</b></span>
+      <span class="price"><b>Price</b></span>
+      <span class="subtotal"><b>Subtotal</b></span>
+      <span class="quantity"><b>Quantity</b></span>
+      <div class="clear"></div>
+    </li>
+
+    <li class="invoice-item list-group-item" ng-repeat="invoiceItem in invoiceItems">
+      <span class="name">{{invoiceItem.product.name}}</span>
+      <span class="price">{{invoiceItem.product.price}}</span>
+      <span class="subtotal">{{invoiceItem.subTotal}}</span>
+      <span class="quantity">
+        <input type="text" ng-model="invoiceItem.quantity"/>
+      </span>
+      <div class="clear"></div>
+    </li>
+
+     <li class="invoice-item list-group-item total" ng-if="invoiceItems.length">
+      <span class="total">
+        <input type="text" ng-model="invoice.discount"/>
+      </span>
+      <span class="description"><b>Discount<b></span>
+      <div class="clear"></div>
+    </li>
+
+    <li class="invoice-item list-group-item total" ng-if="invoiceItems.length">
+      <span class="total">{{invoice.total}}</span>
+      <span class="description"><b>Total<b></span>
+      <div class="clear"></div>
+    </li>
+
+    <li class="invoice-item list-group-item new-item">
+      <span class="name">
+        <label>Product:</label>
+        <select class="products" name='product' ng-model="newProductId">
+          <option ng-repeat="option in products" value="{{option.id}}">{{option.name}}</option>
+        </select>
+      </span>
+      <button class="btn" ng-click="addProduct()">Add</button>
+      <span class="quantity">
+        <input type="text" ng-model="newQuantity"/>
+      </span>
+      <div class="clear"></div>
+    </li>
+  </ul>
+
+  <div class="invoice">
+    <div class="customer">
+      <label ng-if="!customerId">Please choose a customer before you start:</label>
+      <label ng-if="customerId">Customer:</label>
+      <select class="customers" name='customer' ng-model="customerId">
+        <option ng-repeat="option in customers" ng-value="option.id" value="{{option.id}}">
+          {{option.name}}
+        </option>
+      </select>
+    </div>
+</div>

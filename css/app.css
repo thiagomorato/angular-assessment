@@ -1,0 +1,54 @@
+.clear {
+    clear: both;
+}
+
+#invoices .invoice .customer {
+    float: left;
+}
+
+#invoices .invoice .total {
+    float: right;
+}
+
+#new-invoice .invoice-item span{
+    line-height: 26px;
+    float: right;
+    text-align: center;
+}
+
+#new-invoice .invoice-item input {
+    text-align: right;
+    width: 30px;
+}
+
+#new-invoice .invoice-item .name {
+    float: left;
+    width: 30%;
+    text-align: left;
+}
+
+#new-invoice .invoice-item .price {
+    float: left;
+    width: 5%;
+}
+
+#new-invoice .invoice-item .quantity {
+    width: 10%;
+    line-height: normal;
+}
+
+#new-invoice .invoice-item .subtotal {
+    width: 10%;
+}
+
+#new-invoice .invoice-item.new-item .btn {
+    float: right;
+}
+
+#new-invoice .invoice-item.total .description {
+    width: 10%;
+}
+
+#new-invoice .invoice-item.total .total {
+    width: 10%;
+}
